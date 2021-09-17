@@ -14,4 +14,4 @@ This Flask app takes image input from the user, checks whether it is incorrect o
  > python main.py
 - Copy the http link from command line and open it in any internet browser.
 ## First page Look of app
-![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
+![This is an image](https://github.com/Sushma7870-git/Flask-app-for-Image-text-alignment/blob/main/page.PNG)
