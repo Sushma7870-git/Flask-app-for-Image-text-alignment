@@ -1,0 +1,52 @@
+<!doctype html>
+<head>
+<style>
+h2 {text-align: center;}
+p {text-align: center;}
+</style>
+</head>
+
+<title>Image Correction</title>
+<h2><font size="6" color="#008080">Select an image to check and deskew</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+
+
+{% if filename %}
+    {% if angle!=0 %}
+    <form method="post" action="/deskew" enctype="multipart/form-data">
+        <dl>
+            <p>
+                <input type="text" name="filename" value="{{filename}}" readonly autocomplete="off" required>
+                <input type="text" name="angle" value="{{angle}}" readonly autocomplete="off" required>
+            </p>
+        </dl>
+        <p>
+            <input type="submit" value="Deskew">
+        </p>
+    </form>
+     
+    {%endif%}
+	<div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+	</div>
+{% endif %}
+<form method="post" action="/" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>

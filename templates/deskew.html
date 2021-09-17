@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+<style>
+h2 {text-align: center;}
+p {text-align: center;}
+</style>
+</head>
+<title>Deskew</title>
+<h2><font size="6" color="#008080">Deskew</h2>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+
+
+{% if filename %}
+<a href="{{ url_for('display_image', filename=filename) }}" download="">Download</a>
+	<div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+	</div>
+{% endif %}
+
+<a href="/">Back</a>
+
