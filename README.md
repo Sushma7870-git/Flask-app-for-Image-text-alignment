@@ -9,6 +9,6 @@ This Flask app takes image input from the user, checks whether it is incorrect o
 ## How to un the code
 - Create a new environment in python
 - Install all the required libraries. You can also download all the libararies at once by installing 'requirement.txt' file.
-pip install requirement.txt
+ > pip install requirement.txt
 - Run the main.py file in command prompt.
 - Copy the http link from command line and open it in any internet browser.
